@@ -28,6 +28,11 @@ For HCV, a large impact of treatment particularly in PWID is on averted *infecti
 
 Here we'll use a basic SIR-type transmission model to do a cost-effectiveness analysis of HCV treatment in PWID.
 
+
+## Model structure
+
+![](~/git/RforHTA/diagram.pdf)
+
 ## Key Model Assumptions
 
 - Transmission only occurs in PWID
@@ -70,4 +75,5 @@ plot(pressure)
 - Pakistan https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30003-6/fulltext (done in Matlab)
 - Cambodia https://onlinelibrary.wiley.com/doi/full/10.1111/liv.14550 (Markov model)
 - Map source https://onlinelibrary.wiley.com/doi/epdf/10.1111/add.14393 
+- QALY weight source https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4914770/ 
 
