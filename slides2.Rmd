@@ -273,6 +273,7 @@ Each row is incremental to the row above
 
 ## Further reading
 
+- PWID in UK https://onlinelibrary.wiley.com/doi/full/10.1111/add.14217
 - Pakistan https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(20)30003-6/fulltext (done in Matlab)
 - Cambodia https://onlinelibrary.wiley.com/doi/full/10.1111/liv.14550 (Markov model)
 - Map source https://onlinelibrary.wiley.com/doi/epdf/10.1111/add.14393 
