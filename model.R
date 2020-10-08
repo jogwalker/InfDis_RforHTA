@@ -5,8 +5,7 @@ library(tidyverse)
 
 # Initial conditions
 
-initial_values=c(SP=6000,IP=4000,TIP=0,CP=0,TCP=0,RP=0,RCP=0,SX=0,IX=0,TIX=0,CX=0,TCX=0,RX=0,RCX=0,D=0) # assume one PWID is infected
-
+initial_values=c(SP=6000,IP=4000,TIP=0,CP=0,TCP=0,RP=0,RCP=0,SX=0,IX=0,TIX=0,CX=0,TCX=0,RX=0,RCX=0,D=0) 
 
 # Time points
 
@@ -120,9 +119,15 @@ out_long$group <- gsub("X","",out_long$group)
 out_long$group <- gsub("P","",out_long$group)
 
 # To plot number in each compartment over time
-ggplot(data = out_long,          
+p1 <- ggplot(data = out_long,          
        aes(x = time, y = value/10000, colour = group)) +  
   geom_line() +xlab("Time (years)")+ylab("Proportion of the population")+ facet_grid(Scenario~PWID) + theme_minimal() + scale_color_brewer(type="qual",palette=2,name="State")
+
+pdf("~/git/InfDis_RforHTA/plot1.pdf",width=8,height=6)
+p1
+dev.off()
+
+
 
 ## Costs and QALY weights
 
@@ -145,7 +150,7 @@ outputEE$QALY.X <- rowSums(t(apply(outputEE[,3:9],1,function(x){x*QoL})))
 outputEE$QALY.P <- rowSums(t(apply(outputEE[,10:16],1,function(x){x*QoL*QP})))
 outputEE$QALYs <- outputEE$QALY.X + outputEE$QALY.P
 
-# but for DALYs deaths count as 1
+# but for DALYs deaths count as 1 (for simplicity assume DALY weights are inverse of QALY weights)
 outputEE$DALY.X <- rowSums(t(apply(outputEE[,3:9],1,function(x){x*(1-QoL)})))
 outputEE$DALY.P <- rowSums(t(apply(outputEE[,10:16],1,function(x){x*(1-QoL*QP)})))
 outputEE$DALYs <- outputEE$DALY.X + outputEE$DALY.P + outputEE$D
