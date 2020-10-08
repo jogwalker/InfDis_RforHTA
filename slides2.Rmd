@@ -1,7 +1,7 @@
 ---
 title: "Cost-effectiveness of treatment for Hepatitis C Virus"
 subtitle: "Infectious disease modelling for HTA in R"
-author: "Josephine Walker"
+author: "Josephine Walker\nhttps://github.com/jogwalker/InfDis_RforHTA"
 date: "09/10/2020"
 output: beamer_presentation
 ---

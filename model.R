@@ -1,3 +1,7 @@
+
+## Josephine Walker 
+## https://github.com/jogwalker/InfDis_RforHTA
+
 #Load libraries
 library(ggplot2)
 library(deSolve)
